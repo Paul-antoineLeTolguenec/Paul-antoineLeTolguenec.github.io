@@ -29,6 +29,20 @@ npx serve .
 
 Deploy by pushing to `main` — GitHub Pages serves the repo root directly.
 
+## Git Identity Rules — STRICT
+
+**Always** use the personal GitHub account for all commits and pushes on this repo:
+- `user.name` = `Paul-antoineLeTolguenec`
+- `user.email` = `57451716+Paul-antoineLeTolguenec@users.noreply.github.com`
+
+**Never** commit with:
+- The Mirakl account (`paul-antoine.le-tolguenec@mirakl.com` / `Paul-antoineLeTolguenec-Mirakl`)
+- `Co-Authored-By: Claude` or any Anthropic reference in commit messages
+
+Two git hooks enforce this automatically:
+- `.git/hooks/pre-commit` — blocks if git user email contains `mirakl.com`
+- `.git/hooks/commit-msg` — blocks if message contains `Co-Authored-By: Claude`
+
 ## Architecture
 
 - **Single page:** all sections (`#hero`, `#projects`, `#blog`, `#publications`, `#footer`) are in `index.html`
